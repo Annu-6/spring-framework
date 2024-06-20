@@ -1,0 +1,17 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="developer" class="org.example.Developer">
+        <property name="age" value="12" />
+    </bean>
+
+    <bean id="developer1" class="org.example.Developer">
+    </bean>
+<!--    <bean id="laptop" class="Laptop"> // CannotLoadBeanClassException: Cannot find class [Laptop] for bean with name 'laptop' defined in class path resource [spring.xml]-->
+<!--    solution -> use qualified name of Laptop class which is 'org.example.Laptop'-->
+    <bean id="laptop" class="org.example.Laptop">
+    </bean>
+</beans>

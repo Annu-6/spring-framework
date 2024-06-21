@@ -5,7 +5,11 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="developer" class="org.example.Developer">
-        <property name="age" value="12" />
+<!--        NOTE: use constructor inject [constructor-arg] wn u need to create object but use setter injection [property] wn u need it to be optional-->
+<!--        <property name="age" value="12" />-->
+<!--        <constructor-arg name="age" value="14" index="0" />-->
+<!--        <property name="laptop" ref="laptop" />-->
+        <constructor-arg ref="laptop" />
     </bean>
 
     <bean id="developer1" class="org.example.Developer">

@@ -13,7 +13,7 @@ public class App
 //        .IllegalStateException: BeanFactory not initialized or already closed - call 'refresh' before accessing beans via the ApplicationContext
         Developer obj = (Developer) context.getBean("developer");
 //        obj.setAge(18);
-        System.out.println(obj.getAge());
-//        obj.build();
+//        System.out.println(obj.getAge());
+        obj.build(); //NullPointerException: Cannot invoke "org.example.Laptop.compile()" because "this.laptop" is null
     }
 }

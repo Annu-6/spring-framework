@@ -1,21 +1,25 @@
-<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="developer" class="org.example.Developer">
-<!--        NOTE: use constructor inject [constructor-arg] wn u need to create object but use setter injection [property] wn u need it to be optional-->
-<!--        <property name="age" value="12" />-->
-<!--        <constructor-arg name="age" value="14" index="0" />-->
-<!--        <property name="laptop" ref="laptop" />-->
-        <constructor-arg ref="laptop" />
+    <bean id="developer" class="org.example.Developer" autowire="byType">
+        <!--NOTE: use constructor inject [constructor-arg] wn u need to create object but use setter injection [property] wn u need it to be optional
+        <property name="age" value="12" />
+        <constructor-arg name="age" value="14" index="0" />
+        <property name="laptop" ref="laptop" />
+        <constructor-arg ref="laptop" />-->
+        <property name="computer" ref="laptop" />
     </bean>
 
-    <bean id="developer1" class="org.example.Developer">
-    </bean>
+    <!--<bean id="developer1" class="org.example.Developer">
+        </bean>-->
 <!--    <bean id="laptop" class="Laptop"> // CannotLoadBeanClassException: Cannot find class [Laptop] for bean with name 'laptop' defined in class path resource [spring.xml]-->
 <!--    solution -> use qualified name of Laptop class which is 'org.example.Laptop'-->
-    <bean id="laptop" class="org.example.Laptop">
+    <bean id="laptop" class="org.example.Laptop" primary="true">
+    </bean>
+
+    <bean id="desktop" class="org.example.Desktop">
     </bean>
 </beans>

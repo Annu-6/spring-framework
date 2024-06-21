@@ -11,7 +11,7 @@ public class App
         // bcz Developer bean is not already existing in container 'context'
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 //        .IllegalStateException: BeanFactory not initialized or already closed - call 'refresh' before accessing beans via the ApplicationContext
-        Developer obj = (Developer) context.getBean("developer");
+        Developer obj = context.getBean(Developer.class);
 //        obj.setAge(18);
 //        System.out.println(obj.getAge());
         obj.build(); //NullPointerException: Cannot invoke "org.example.Laptop.compile()" because "this.laptop" is null
